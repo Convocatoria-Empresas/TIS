@@ -16,8 +16,8 @@
 
 <script>
     export default {
-        mounted() {
-            const response= axios.get('/empresa');
+       async mounted() {
+            const response= axios.get("/empresa");
             const data= response.data;
             console.log(data);
         }

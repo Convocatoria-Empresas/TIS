@@ -12,13 +12,13 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        /*if($request->ajax()){
-            return Empresa::where('Nombre_Largo', auth())
-        }*/
-
-        return view('empresa')->with('sate', 'index');
+        if($request->ajax()){
+            return Empresa::where('id', auth()->id())->get();
+        } else{
+            return view('empresa')->with('state','index');
+        }
     }
 
     /**
@@ -28,7 +28,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('empresa')->with('state', 'create');
     }
 
     /**
@@ -48,15 +48,16 @@ class EmpresaController extends Controller
      * @param  \App\Models\Empresa  $empresa
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show(Request $request)
     {
 
         if($request->ajax()){
-            return Empresa::table('empresas')->where($id)->get();
+           // return Empresa::where('id', auth()->id())->get();
+            return Empresa::table('empresas')->find('id');
         } else{
             return view('empresa');
         }
-        
+        //return $empresa;
     }
 
     /**
