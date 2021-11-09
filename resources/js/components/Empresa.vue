@@ -63,7 +63,7 @@ export default {
     
     data() {
         return{
-            empresa:[/*{
+            empresa:[],/*{
                 Nombre_Largo : 'rgersg',
                 Nombre_Corto : '',
                 Correo_electronico : '',
@@ -78,7 +78,7 @@ export default {
                 Socio_3 : '',
                 Socio_4 : '',
                 Socio_5 : '',
-            }*/],
+            }*/
                 
             
         }
