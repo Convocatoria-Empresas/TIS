@@ -7,7 +7,7 @@
     @if($state == 'index')      
                 <empresa> </empresa>
     @elseif ($state == 'create')
-                <empresa-create> </empresa-create>
+                <empresa-create></empresa-create>
     @endif       
     
 </div>

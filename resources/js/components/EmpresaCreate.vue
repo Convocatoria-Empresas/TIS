@@ -1,5 +1,5 @@
 <template>
-    <form class="form-group">
+    <form class="form-group" @submit.prevent="submit">
         <label for="title">Aquií va</label>
         <hr>
         <label for="content">Nombre_Larg</label>
@@ -40,32 +40,53 @@
 
 export default {
     
-    async mounted(){
+    /*async mounted(){
         const response = await axios.get("/create");
         const data= response.data;
         console.log(data);
-    },
+    },*/
     
     data() {
         return{
             empresa:{
-            Nombre_Largo:"Aperture",
-            Nombre_Corto:"APE",
-            Correo_electronico:"something@gmail.com",
-            Telefono:"74067895",
-	        NIT:"23654",
-            Solvencia:"agh.pdf",
-            Constitucion:"uff.pdf",
-            Plan_Pago:"ehh.pdf",
-            Carta:"ajem.pdf",
-            Socio_1:"201704567",
-            Socio_2:"201704569",
-            Socio_3:"201704565",
-            Socio_4:"201704566",
-            Socio_5:"201704563"
+            Nombre_Largo:"",
+            Nombre_Corto:"",
+            Correo_electronico:"",
+            Telefono:"",
+	        NIT:"",
+            Solvencia:"",
+            Constitucion:"",
+            Plan_Pago:"",
+            Carta:"",
+            Socio_1:"",
+            Socio_2:"",
+            Socio_3:"",
+            Socio_4:"",
+            Socio_5:""
             }
         }
         
+    },
+    methods:{
+        async submit(){
+           const response = await axios.empresa('/empresa', this.empresa);
+             this.empresa.Nombre_Largo = "";
+            this.empresa.Nombre_Corto = "";
+            this.empresa.Correo_electronico = "";
+            this.empresa.Telefono = "";
+	        this.empresa.NIT = "";
+            this.empresa.Solvencia = "";
+            this.empresa.Constitucion = "";
+            this.empresa.Plan_Pago = "";
+            this.empresa.Carta = "";
+            this.empresa.Socio_1 = "";
+            this.empresa.Socio_2 = "";
+            this.empresa.Socio_3 = "";
+            this.empresa.Socio_4 = "";
+            this.empresa.Socio_5 = "";
+            
+            console.log(response);
+        }
     },
 }
 </script>
