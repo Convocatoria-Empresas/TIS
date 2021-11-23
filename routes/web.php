@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/empresa', App\Http\Controllers\EmpresaController::class);
+//Route::get('empresa/create', [App\Http\Controllers\EmpresaController::class, 'create']);
+
