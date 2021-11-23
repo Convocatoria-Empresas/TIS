@@ -1,3 +1,4 @@
+
 <template>
     <div class="row">
         <div class="text-center col">
@@ -137,36 +138,41 @@
                         </div>
                     </form>-->
                     <form class="form-group" @submit.prevent="submit">
-        <label for="title">Aquií va</label>
+        <label for="title">El registro</label>
         <hr>
         <label for="content">Nombre_Larg</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Nombre_Largo">
+        <input class="form-control" id="Nombre_Larg" type="text" v-model="empresa.Nombre_Largo">
         <label for="content">Nombre corto</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Nombre_Corto">
+        <input class="form-control" id="Nombre_Corto" type="text" v-model="empresa.Nombre_Corto">
         <label for="content">Correo</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Correo_electronico">
+        <input class="form-control" id="Correo_electronico" type="text" v-model="empresa.Correo_electronico">
         <label for="content">Telefono</label>
         <input class="form-control" id="title" type="text" v-model="empresa.Telefono">
         <label for="content">NIT</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.NIT">
+        <input class="form-control" id="Telefono" type="text" v-model="empresa.NIT">
+
+
         <label for="content">Doc1</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Solvencia">
+        <input  id="Solvencia" type="file" @change="processFileSolv">
+        
         <label for="content">Doc2</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Constitucion">
-        <label for="content">Doc3</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Plan_Pago">
+        <!--<input  id="Constitucion" type="file" @change="processFileConst" >-->
+        <label for="content">Doc3</label>  
+        <!--<input id="Plan_Pago" type="file" @change="processFilePlan">-->
         <label for="content">Doc4</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Carta">
+        <!--<input id="Carta" type="file" @change="processFileCarta">-->
+
+
         <label for="content">Socio 1</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Socio_1">
+        <input class="form-control" id="Socio_1" type="text" v-model="empresa.Socio_1">
         <label for="content">Socio 2</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Socio_2">
+        <input class="form-control" id="Socio_2" type="text" v-model="empresa.Socio_2">
         <label for="content">Socio 3</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Socio_3">
+        <input class="form-control" id="Socio_3" type="text" v-model="empresa.Socio_3">
         <label for="content">Socio 4</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Socio_4">
+        <input class="form-control" id="Socio_4" type="text" v-model="empresa.Socio_4">
         <label for="content">Socio 5</label>
-        <input class="form-control" id="title" type="text" v-model="empresa.Socio_5">
+        <input class="form-control" id="Socio_5" type="text" v-model="empresa.Socio_5">
         <button type="submit" class="btn btn-primary mt-3">Ingresar</button>
         {{ empresa }}
         
@@ -209,7 +215,9 @@ export default {
         }
         
     },
+    
     methods:{
+        
         async submit(){
 
             
@@ -222,7 +230,7 @@ export default {
             this.empresa.Correo_electronico = "";
             this.empresa.Telefono = "";
 	        this.empresa.NIT = "";
-            this.empresa.Solvencia = "";
+           this.empresa.Solvencia = "";
             this.empresa.Constitucion = "";
             this.empresa.Plan_Pago = "";
             this.empresa.Carta = "";
@@ -234,6 +242,31 @@ export default {
 
             console.log(this.response);
             
+        },
+        processFileSolv(event){
+
+             var Solvfile= event.target.files[0];
+            empresa.Solvencia = Solvfile;
+            console.log(event.target.files[0]);
+        },
+        
+         processFileConst(event){
+
+            var Constfile= event.target.files[0];
+            empresa.Constitucion = Constfile;
+            console.log(event.target.files[0]);
+        },
+         processFilePlan(event){
+
+            var Planfile=event.target.files[0];
+            empresa.Plan_Pago = Planfile;
+            console.log(event.target.files[0]);
+        },
+         processFileCarta(event){
+
+            var Cartafile=event.target.files[0];
+            empresa.Carta = Cartafile;
+            console.log(event.target.files[0]);
         }
     },
 }

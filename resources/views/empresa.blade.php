@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    <h1>ALGO</h1>
     
     @if($state == 'index')      
                 <empresa> </empresa>

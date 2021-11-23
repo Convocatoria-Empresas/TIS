@@ -2417,6 +2417,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   /*async mounted(){
       const response = await axios.get("/create");
@@ -2481,6 +2487,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    processFileSolv: function processFileSolv(event) {
+      var Solvfile = event.target.files[0];
+      empresa.Solvencia = Solvfile;
+      console.log(event.target.files[0]);
+    },
+    processFileConst: function processFileConst(event) {
+      var Constfile = event.target.files[0];
+      empresa.Constitucion = Constfile;
+      console.log(event.target.files[0]);
+    },
+    processFilePlan: function processFilePlan(event) {
+      var Planfile = event.target.files[0];
+      empresa.Plan_Pago = Planfile;
+      console.log(event.target.files[0]);
+    },
+    processFileCarta: function processFileCarta(event) {
+      var Cartafile = event.target.files[0];
+      empresa.Carta = Cartafile;
+      console.log(event.target.files[0]);
     }
   }
 });
@@ -39063,7 +39089,7 @@ var render = function () {
               },
             },
             [
-              _c("label", { attrs: { for: "title" } }, [_vm._v("Aquií va")]),
+              _c("label", { attrs: { for: "title" } }, [_vm._v("El registro")]),
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
@@ -39081,7 +39107,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Nombre_Larg", type: "text" },
                 domProps: { value: _vm.empresa.Nombre_Largo },
                 on: {
                   input: function ($event) {
@@ -39107,7 +39133,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Nombre_Corto", type: "text" },
                 domProps: { value: _vm.empresa.Nombre_Corto },
                 on: {
                   input: function ($event) {
@@ -39131,7 +39157,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Correo_electronico", type: "text" },
                 domProps: { value: _vm.empresa.Correo_electronico },
                 on: {
                   input: function ($event) {
@@ -39183,7 +39209,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Telefono", type: "text" },
                 domProps: { value: _vm.empresa.NIT },
                 on: {
                   input: function ($event) {
@@ -39198,98 +39224,15 @@ var render = function () {
               _c("label", { attrs: { for: "content" } }, [_vm._v("Doc1")]),
               _vm._v(" "),
               _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.empresa.Solvencia,
-                    expression: "empresa.Solvencia",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
-                domProps: { value: _vm.empresa.Solvencia },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.empresa, "Solvencia", $event.target.value)
-                  },
-                },
+                attrs: { id: "Solvencia", type: "file" },
+                on: { change: _vm.processFileSolv },
               }),
               _vm._v(" "),
               _c("label", { attrs: { for: "content" } }, [_vm._v("Doc2")]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.empresa.Constitucion,
-                    expression: "empresa.Constitucion",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
-                domProps: { value: _vm.empresa.Constitucion },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.empresa, "Constitucion", $event.target.value)
-                  },
-                },
-              }),
-              _vm._v(" "),
               _c("label", { attrs: { for: "content" } }, [_vm._v("Doc3")]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.empresa.Plan_Pago,
-                    expression: "empresa.Plan_Pago",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
-                domProps: { value: _vm.empresa.Plan_Pago },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.empresa, "Plan_Pago", $event.target.value)
-                  },
-                },
-              }),
-              _vm._v(" "),
               _c("label", { attrs: { for: "content" } }, [_vm._v("Doc4")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.empresa.Carta,
-                    expression: "empresa.Carta",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
-                domProps: { value: _vm.empresa.Carta },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.empresa, "Carta", $event.target.value)
-                  },
-                },
-              }),
               _vm._v(" "),
               _c("label", { attrs: { for: "content" } }, [_vm._v("Socio 1")]),
               _vm._v(" "),
@@ -39303,7 +39246,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Socio_1", type: "text" },
                 domProps: { value: _vm.empresa.Socio_1 },
                 on: {
                   input: function ($event) {
@@ -39327,7 +39270,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Socio_2", type: "text" },
                 domProps: { value: _vm.empresa.Socio_2 },
                 on: {
                   input: function ($event) {
@@ -39351,7 +39294,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Socio_3", type: "text" },
                 domProps: { value: _vm.empresa.Socio_3 },
                 on: {
                   input: function ($event) {
@@ -39375,7 +39318,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Socio_4", type: "text" },
                 domProps: { value: _vm.empresa.Socio_4 },
                 on: {
                   input: function ($event) {
@@ -39399,7 +39342,7 @@ var render = function () {
                   },
                 ],
                 staticClass: "form-control",
-                attrs: { id: "title", type: "text" },
+                attrs: { id: "Socio_5", type: "text" },
                 domProps: { value: _vm.empresa.Socio_5 },
                 on: {
                   input: function ($event) {

@@ -39,6 +39,13 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
+
+      /*  $datosEmpresa= request()->except('_token');
+
+        if($request-> hasFile('Solvencia')){
+            $datosEmpresa['Solvencia']=$request->file('Solvencia')->store('uploads', 'public');
+        }*/
+
         $empresa= new Empresa();
         $empresa-> Nombre_Largo = $request->Nombre_Largo;
         $empresa->Nombre_Corto = $request->Nombre_Corto;
@@ -47,7 +54,7 @@ class EmpresaController extends Controller
         $empresa->NIT = $request->NIT;
         $empresa->Solvencia = $request->Solvencia;
         $empresa->Constitucion = $request->Constitucion;
-        $empresa->Plan_Pago = $request->Plan_Pago ;
+        $empresa->Plan_Pago = $request->Plan_Pago;
         $empresa->Carta = $request->Carta;
         $empresa->Socio_1 = $request->Socio_1;
         $empresa->Socio_2 = $request->Socio_2;
