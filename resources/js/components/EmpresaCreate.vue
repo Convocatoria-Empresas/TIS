@@ -246,26 +246,26 @@ export default {
         processFileSolv(event){
 
              var Solvfile= event.target.files[0];
-            empresa.Solvencia = Solvfile;
+            this.empresa.Solvencia = Solvfile;
             console.log(event.target.files[0]);
         },
         
          processFileConst(event){
 
             var Constfile= event.target.files[0];
-            empresa.Constitucion = Constfile;
+            this.empresa.Constitucion = Constfile;
             console.log(event.target.files[0]);
         },
          processFilePlan(event){
 
             var Planfile=event.target.files[0];
-            empresa.Plan_Pago = Planfile;
+            this.empresa.Plan_Pago = Planfile;
             console.log(event.target.files[0]);
         },
          processFileCarta(event){
 
             var Cartafile=event.target.files[0];
-            empresa.Carta = Cartafile;
+            this.empresa.Carta = Cartafile;
             console.log(event.target.files[0]);
         }
     },

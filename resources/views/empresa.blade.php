@@ -5,6 +5,8 @@
     
     @if($state == 'index')      
                 <empresa> </empresa>
+    @elseif ($state == 'home')
+                <home> </home>
     @elseif ($state == 'create')
                 <empresa-create></empresa-create>
     @endif       

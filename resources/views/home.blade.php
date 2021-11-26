@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
-    <example-component> </example-component>
+
+    <home-initial> </home-initial>
 </div>
 @endsection
